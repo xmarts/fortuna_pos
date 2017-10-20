@@ -1,0 +1,10 @@
+<openerp>
+    <data>
+      <!-- Inherit the js template in the module and include js file there.  -->
+        <template id="assets_backend_pippa" name="pos_print" inherit_id="web.assets_backend">
+            <xpath expr="." position="inside">
+                <script type="text/javascript" src="/fortuna_pos/static/src/js/pos_button.js"></script>               
+            </xpath>
+        </template>
+    </data>
+</openerp>

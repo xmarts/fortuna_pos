@@ -1,0 +1,20 @@
+
+@font-face{
+    font-family: 'Inconsolata';
+    src: url(../fonts/Inconsolata.otf);
+}
+
+.pos-sale-pagare {
+    text-align: left;
+    width: 300px;
+    background-color: white;
+    margin: 20px;
+    padding: 15px;
+    font-size: 3pt;
+    padding-bottom:30px;
+    display: inline-block;
+    font-family: "Inconsolata";
+    border: solid 1px rgb(220,220,220);
+    border-radius: 3px;
+    overflow: hidden;
+}

@@ -1,0 +1,13 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<openerp>
+    <data>
+      <!-- Inherit the js template in the module and include js file there.  -->
+      <template id="assets_backend" name="pos_custom_assets" inherit_id="point_of_sale.assets">
+            <xpath expr="." position="inside">
+            	<link rel="stylesheet" href="/fortuna_pos/static/src/css/pos.css" id="pos-stylesheet"/>
+                <script type="text/javascript" src="/fortuna_pos/static/src/js/pos.js"></script>               
+            </xpath>
+        </template>
+    </data>
+</openerp>

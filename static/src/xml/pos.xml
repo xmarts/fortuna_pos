@@ -1,0 +1,101 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<templates id="template" xml:space="preserve">
+     
+    <t t-name="ReceiptScreenWidget">
+        <div class='receipt-screen screen'>
+            <div class='screen-content'>
+                <div class='top-content'>
+                    <h1>Change: <span class='change-value'>0.00</span></h1>
+                    <span class='button next'>
+                        Next Order
+                        <i class='fa fa-angle-double-right'></i>
+                    </span>
+                    <span class='button next'>
+                        Next Order
+                        <i class='fa fa-angle-double-right'></i>
+                    </span>
+                </div>
+                <div class="centered-content touch-scrollable">
+                    <div class="button receipt">
+                        <i></i> Ver Recibo
+                    </div>
+                    <div class="button print">
+                        <i class='fa fa-print'></i> Imprimir
+                    </div>
+                    <div class="button pagare">
+                        <i></i> Ver pagaré
+                    </div>
+                    <div class="button printpay">
+                        <i class='fa fa-print'></i> Imprimir pagare
+                    </div>
+                    
+                     
+                    <div class="pos-receipt-container">
+                    </div>
+                </div>
+            </div>
+        </div>
+    </t>
+
+     <t t-name="PosTicket2">
+        <div class="pos-sale-ticket">
+            
+          <div class="pos-center-align"><t t-esc="widget.pos.company.name"/><br /><t t-esc="moment().format('L LT')"/> </div>
+            <br /><br />
+            Documento:<t t-esc="order.name"/> 1 de 1 POR ESTE<br />
+            PAGARE ME(NOS) OBLIGO(AMOS) A PAGAR ---<br />
+            INCONDICIONALMENTE A LA ORDEN DE ------<br />
+            MAYORISTAS LA FORTUNA, S.A DE C.V. EN --<br />
+            LA CIUDAD DE SAN LUIS  POTOSI, S.L.P. O --<br />
+            EN CUALQUIERA OTRA QUE SE ME (NOS) ---<br />
+            REQUIERA A SOLICITUD O A SU ORDEN EL ---<br />
+            DIA    <t t-esc='receipt.date.localestring' />, LA CANTIDAD ---<br />
+            DE: ====<t t-esc="widget.format_currency(order.get_total_with_tax())"/>==== 
+            (<t t-esc="order.get_amount_to_text()"/>)====
+           ESTE PAGARE ES EL 1 DE 1 QUE EN SU ----<br />
+           CONJUNTO SUMAN LOS CARGOS POR ------<br />
+           FINANCIAMIENTO MAS EL VALOR RECIBIDO EN<br />
+           LAS MERCANCIAS DETALLADAS EN EL ---<br />
+           DOCUMENTO EN VENTA CUYO FOLIO ES:<br />
+           <t t-esc="order.name"/>, A MI (NUESTRA) ENTERA--<br />
+           SATISFACCION. ESTE PAGARE CAUSA EL ---<br />
+           0.00% DE INTERES MENSUAL POR TODO EL ---<br />
+           TIEMPO QUE ESTE INSOLUTO, SIN QUE SE DE --<br />
+           POR ESTO, AMPLIADO EL PLAZO DE SU ---<br />
+           VENCIMIENTO.--------------------------
+        </div>
+    </t>
+    <t t-name="XmlReceiptpagare" style="font-size:4pt;">
+        <!--value-thousands-separator=''-->
+        <receipt style='font-size:5pt;'>
+            <div align='center'>
+             	<t t-esc="receipt.company.name"/>
+             	<br />
+             	<t t-esc='receipt.date.localestring' />
+              </div>
+	<div style='font-size:5pt;'> 
+                <div>Documento:</div><t t-esc='receipt.name' /> 1 de 1 POR ESTE<br />
+                PAGARE ME(NOS) OBLIGO(AMOS) A PAGAR ---<br />
+                INCONDICIONALMENTE A LA ORDEN DE ------<br />
+                MAYORISTAS LA FORTUNA, S.A DE C.V. EN --<br />
+                LA CIUDAD DE SAN LUIS  POTOSI, S.L.P. O --<br />
+                EN CUALQUIERA OTRA QUE SE ME (NOS) ---<br />
+                REQUIERA A SOLICITUD O A SU ORDEN EL ---<br />
+                DIA <t t-esc='receipt.date.localestring' />, LA CANTIDAD ---<br />
+                DE: ====<t t-esc='receipt.total_with_tax' />==== 
+                (<t t-esc='amounttext' />)====
+               ESTE PAGARE ES EL 1 DE 1 QUE EN SU ----<br />
+               CONJUNTO SUMAN LOS CARGOS POR ------<br />
+               FINANCIAMIENTO MAS EL VALOR RECIBIDO EN<br />
+               LAS MERCANCIAS DETALLADAS EN EL ---<br />
+               DOCUMENTO EN VENTA CUYO FOLIO ES:<br />
+               <t t-esc='receipt.name' />, A MI (NUESTRA) ENTERA--<br />
+               SATISFACCION. ESTE PAGARE CAUSA EL ---<br />
+               0.00% DE INTERES MENSUAL POR TODO EL ---<br />
+               TIEMPO QUE ESTE INSOLUTO, SIN QUE SE DE --<br />
+               POR ESTO, AMPLIADO EL PLAZO DE SU ---<br />
+               VENCIMIENTO.--------------------------</div>
+         </receipt>
+    </t>
+
+</templates>
